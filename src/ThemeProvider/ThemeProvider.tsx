@@ -9,7 +9,7 @@ export interface ThemeProviderProps {
 class ThemeProvider extends Component<ThemeProviderProps> {
     render() {
         return (
-            <ThemeContext.Provider value={this.props.theme} >
+            <ThemeContext.Provider value={this.props.theme as RNTheme} >
                 {this.props.children}
             </ThemeContext.Provider>
         )
