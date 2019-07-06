@@ -1,24 +1,21 @@
 {
     "compilerOptions": {
-        // "noImplicitAny": false,
-        "allowJs": true,
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
-        "isolatedModules": true,
+        "declaration": true, /* Generates corresponding '.d.ts' file. */
         "jsx": "react",
         "lib": [
             "es6",
             "dom"
         ],
+        "module": "commonjs",
         "moduleResolution": "node",
-        "noEmit": true,
         "strict": true,
-        "target": "esnext"
+        "target": "esnext",
+        "types": [
+            "react"
+        ]
     },
-    "include": [
-        "**/*"
-    ],
-    "outDir": "dist",
     "exclude": [
         "node_modules",
         "babel.config.js",
