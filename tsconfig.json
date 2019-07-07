@@ -1,9 +1,8 @@
 {
     "compilerOptions": {
-        "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
         "declaration": true, /* Generates corresponding '.d.ts' file. */
-        "jsx": "react",
+        "jsx": "react-native",
         "lib": [
             "es6",
             "dom"
@@ -13,7 +12,9 @@
         "strict": true,
         "target": "esnext",
         "types": [
-            "react"
+            "react",
+            "react-native",
+            "node"
         ],
         "outDir": "dist"
     },
