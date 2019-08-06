@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
-import { RNTheme } from '../RNTheme';
+import React from 'react';
 import ThemeContext from '../ThemeContext';
+import { RNTheme } from '..';
 
 export interface ThemeProviderProps {
-    theme: Partial<RNTheme>
+    theme: RNTheme
 }
 
-class ThemeProvider extends Component<ThemeProviderProps> {
-    render() {
-        return (
-            <ThemeContext.Provider value={this.props.theme as RNTheme} >
-                {this.props.children}
-            </ThemeContext.Provider>
-        )
-    }
+const ThemeProvider: React.SFC<ThemeProviderProps> = (props) => {
+    return (
+        <ThemeContext.Provider value={props.theme} >
+            {props.children}
+        </ThemeContext.Provider>
+    )
 }
 
 export default ThemeProvider;

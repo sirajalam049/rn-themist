@@ -1,6 +1,5 @@
-import { RNTheme } from "../RNTheme";
+import { RNTheme } from '..'
 
-
-const createTheme = (theme: Partial<RNTheme>): RNTheme => theme as RNTheme;
+const createTheme = <T extends RNTheme>(theme: T): T => theme;
 
 export default createTheme
