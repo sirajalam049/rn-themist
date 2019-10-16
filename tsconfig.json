@@ -4,8 +4,7 @@
         "declaration": true, /* Generates corresponding '.d.ts' file. */
         "jsx": "react-native",
         "lib": [
-            "es6",
-            "dom"
+            "es6"
         ],
         "module": "commonjs",
         "moduleResolution": "node",
@@ -13,7 +12,6 @@
         "target": "esnext",
         "types": [
             "react",
-            "react-native",
             "node"
         ],
         "outDir": "dist"
@@ -21,6 +19,7 @@
     "exclude": [
         "node_modules",
         "babel.config.js",
-        "metro.config.js"
+        "metro.config.js",
+        "dist/*"
     ]
 }
