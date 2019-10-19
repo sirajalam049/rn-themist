@@ -1,6 +1,6 @@
 import React from 'react';
 import ThemeContext from '../ThemeContext';
-import { RNTheme } from '..';
+import { RNTheme } from '../RNTheme';
 
 export interface ThemeProviderProps {
     theme: RNTheme

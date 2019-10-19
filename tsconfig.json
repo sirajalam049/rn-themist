@@ -14,7 +14,8 @@
             "react",
             "node"
         ],
-        "outDir": "dist"
+        "outDir": "dist",
+        "comments": "declaration"
     },
     "exclude": [
         "node_modules",

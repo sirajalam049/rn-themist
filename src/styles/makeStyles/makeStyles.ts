@@ -1,7 +1,7 @@
 import React from 'react';
 import ThemeContext from "../ThemeContext";
 import { StyleSheet } from 'react-native';
-import { RNTheme } from '..';
+import { RNTheme } from '../RNTheme';
 
 export type StylesHook<T> = () => StyleSheet.NamedStyles<T>;
 

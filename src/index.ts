@@ -1,10 +1,8 @@
 
-export { default as RNTheme } from './RNTheme';
+export { default as RNTheme } from './styles';
+export { default as ThemeContext, useTheme } from './styles/ThemeContext';
+export { default as ThemeProvider, ThemeProviderProps } from './styles/ThemeProvider';
+export { default as createTheme } from './styles/createTheme';
+export { default as makeStyles } from './styles/makeStyles';
 
-export { default as ThemeContext, useTheme } from './ThemeContext';
-
-export { default as ThemeProvider, ThemeProviderProps } from './ThemeProvider';
-
-export { default as createTheme } from './createTheme';
-
-export { default as makeStyles } from './makeStyles';
+export * from './styles';

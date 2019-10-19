@@ -1,7 +1,7 @@
 import React from 'react';
-import { RNTheme } from '..';
+import { DefaultTheme, RNTheme } from '../RNTheme'
 
-const ThemeContext = React.createContext<RNTheme>({});
+const ThemeContext = React.createContext<RNTheme>(DefaultTheme);
 
 export const useTheme = <T extends RNTheme>(): T => {
     const theme = React.useContext(ThemeContext);
