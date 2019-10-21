@@ -140,3 +140,5 @@ export const DefaultTheme: RNTheme = {
         },
     }
 }
+
+export default DefaultTheme;

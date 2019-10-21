@@ -15,7 +15,8 @@
             "node"
         ],
         "outDir": "dist",
-        "comments": "declaration"
+        "removeComments": false,
+        "baseUrl": "src"
     },
     "exclude": [
         "node_modules",

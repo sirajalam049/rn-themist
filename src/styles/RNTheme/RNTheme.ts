@@ -1,6 +1,6 @@
 import { PalleteOptions, TypographyOptions, GutterOptions } from '../';
 
-interface RNTheme {
+export interface RNTheme {
     pallete: PalleteOptions;
     typography: TypographyOptions;
     gutters: GutterOptions;
