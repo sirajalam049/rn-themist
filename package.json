@@ -1,6 +1,6 @@
 {
     "name": "rn-themist",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "description": "Material-UI way of theming RN Components",
     "main": "./dist/index.js",
     "_location": "/rn-themist",
@@ -36,8 +36,11 @@
         "@types/lodash": "^4.14.144",
         "@types/node": "^12.11.1",
         "lodash": "^4.17.15",
-        "react": "^16.8.6",
-        "react-native": "^0.60.4"
+        "react": "^16.8.6"
+    },
+    "peerDependencies": {
+        "react": ">=16.4.1",
+        "react-native": ">=0.61.0"
     },
     "devDependencies": {
         "@types/react-native": "0.60.3",
@@ -47,6 +50,7 @@
         "metro-react-native-babel-preset": "0.55.0",
         "typescript": "3.5.3",
         "babel-jest": "^24.9.0",
-        "jest": "^24.9.0"
+        "jest": "^24.9.0",
+        "react-native": "^0.61.2"
     }
 }
