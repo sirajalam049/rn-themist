@@ -45,6 +45,8 @@
         "@babel/core": "7.5.5",
         "@babel/runtime": "7.5.5",
         "metro-react-native-babel-preset": "0.55.0",
-        "typescript": "3.5.3"
+        "typescript": "3.5.3",
+        "babel-jest": "^24.9.0",
+        "jest": "^24.9.0"
     }
 }
