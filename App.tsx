@@ -1,8 +1,7 @@
 import React, { Fragment } from 'react';
-import { SafeAreaView, Text } from 'react-native';
-import { createTheme, ThemeProvider } from './src/lib';
-import { Typography } from './src/core';
-// import Typography from './src/core/Typography';
+// import { SafeAreaView, Text } from 'react-native';
+import { ThemeProvider, Typography, createTheme } from 'rn-themist';
+import { Text, ScrollView } from 'react-native';
 
 const Theme = createTheme({
     pallete: {
@@ -10,7 +9,7 @@ const Theme = createTheme({
             main: 'red'
         },
         secondary: {
-            main: 'green'
+            main: 'green',
         }
     }
 });
@@ -18,9 +17,8 @@ const Theme = createTheme({
 const App = () => {
     return (
         <Fragment>
-            <SafeAreaView>
+            <ScrollView>
                 <ThemeProvider theme={Theme} >
-
                     <Typography variant={'h1'} >Colors</Typography>
                     <Typography color={'primary'} >Color Primary</Typography>
                     <Typography color={'secondary'} >Color Secondary</Typography>
@@ -50,7 +48,7 @@ const App = () => {
                     <Typography variant={'caption'} >Caption</Typography>
                     <Typography variant={'overline'} >Overline</Typography>
                 </ThemeProvider>
-            </SafeAreaView>
+            </ScrollView>
         </Fragment>
     );
 };
