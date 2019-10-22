@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { DefaultTheme, RNTheme } from '../RNTheme'
 
 const ThemeContext = React.createContext<RNTheme>(DefaultTheme);
