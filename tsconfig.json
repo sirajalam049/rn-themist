@@ -16,7 +16,12 @@
         ],
         "outDir": "dist",
         "removeComments": false,
-        "baseUrl": "src"
+        "baseUrl": "src",
+        "paths": {
+            "rn-themist": [
+                "./src"
+            ]
+        }
     },
     "exclude": [
         "node_modules",
