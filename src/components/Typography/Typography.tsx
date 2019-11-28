@@ -1,20 +1,20 @@
 import * as React from 'react'
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, TextProps } from 'react-native';
 import utils from '../../utils';
 import { makeStyles } from '../../styles';
 import { TypographyColors, TypographyVariants, GutterVariants } from '../../styles';
 
-export interface TypographyProps {
-    align?: 'left' | 'right' | 'center' | 'justify'
-    color?: TypographyColors
-    gutterButtom?: keyof GutterVariants
-    variant?: TypographyVariants
+export interface TypographyProps extends TextProps {
+    align?: 'left' | 'right' | 'center' | 'justify';
+    color?: TypographyColors;
+    gutterButtom?: keyof GutterVariants;
+    variant?: TypographyVariants;
 }
 
 
 const Typography: React.FC<TypographyProps> = (props) => {
 
-    const { align = 'left', color = '', gutterButtom = '', variant = 'body2', children } = props;
+    const { align = 'left', color = '', gutterButtom = '', variant = 'body2', children, ...textProps } = props;
 
     const styles = useStyle();
 
@@ -31,7 +31,9 @@ const Typography: React.FC<TypographyProps> = (props) => {
                 styles[colorKey],
                 styles[alignKey],
                 (gutterButtom ? styles[gutterKey] : {}),
+                textProps.style
             ])}
+            {...textProps}
         >{children}</Text>
     )
 }
