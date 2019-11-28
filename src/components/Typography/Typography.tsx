@@ -14,7 +14,7 @@ export interface TypographyProps extends TextProps {
 
 const Typography: React.FC<TypographyProps> = (props) => {
 
-    const { align = 'left', color = '', gutterButtom = '', variant = 'body2', children, ...textProps } = props;
+    const { align = 'left', color = '', gutterButtom = '', variant = 'body2', children, style, ...textProps } = props;
 
     const styles = useStyle();
 
