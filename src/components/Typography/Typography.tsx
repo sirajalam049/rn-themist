@@ -31,6 +31,7 @@ const Typography: React.FC<TypographyProps> = (props) => {
                 styles[colorKey],
                 styles[alignKey],
                 (gutterButtom ? styles[gutterKey] : {}),
+                style
             ])}
             {...textProps}
         >{children}</Text>
