@@ -51,7 +51,6 @@ const useStyle = makeStyles((theme) => {
         root: {
             fontSize: tg.fontSize,
             fontFamily: tg.fontFamily,
-            fontWeight: tg.fontWeight,
             lineHeight: tg.fontSize,
             color: tg.color
         },
