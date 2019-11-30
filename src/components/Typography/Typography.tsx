@@ -121,6 +121,19 @@ const useStyle = makeStyles((theme) => {
             color: color.success.main
         },
 
+        alignLeft: {
+            textAlign: 'left'
+        },
+        alignRight: {
+            textAlign: 'right'
+        },
+        alignCenter: {
+            textAlign: 'center'
+        },
+        alignJustify: {
+            textAlign: 'justify'
+        },
+
         gutterBottomLow: {
             marginBottom: gutter.low
         },

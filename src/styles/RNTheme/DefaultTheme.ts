@@ -56,8 +56,8 @@ export const DefaultTypography: Pick<RNTheme, 'typography'> = {
     typography: {
         fontSize: 14,
         fontFamily: Font1.semibold,
-        fontWeight: "600",
         color: DefaultPallete.pallete.text.primary,
+        fontWeight: "400",
         h1: {
             fontSize: 32,
             lineHeight: 36
@@ -86,7 +86,6 @@ export const DefaultTypography: Pick<RNTheme, 'typography'> = {
             fontSize: 14,
             lineHeight: 18,
             fontFamily: Font1.regular,
-            fontWeight: "600",
         },
         body2: {
             fontSize: 12,
