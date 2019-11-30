@@ -14,6 +14,12 @@ const Font1 = {
     700: 'Quicksand-Bold'
 }
 
+const Light = "300";
+const Regular = "400";
+const Medium = "500";
+const SemoBold = "600";
+const Bold = "700";
+
 export const DefaultPallete: Pick<RNTheme, 'pallete'> = {
     pallete: {
         primary: {
@@ -57,6 +63,7 @@ export const DefaultTypography: Pick<RNTheme, 'typography'> = {
         fontSize: 14,
         fontFamily: Font1.semibold,
         color: DefaultPallete.pallete.text.primary,
+        fontWeight: "600",
         h1: {
             fontSize: 32,
             lineHeight: 36
@@ -85,21 +92,23 @@ export const DefaultTypography: Pick<RNTheme, 'typography'> = {
             fontSize: 14,
             lineHeight: 18,
             fontFamily: Font1.regular,
+            fontWeight: Regular
         },
         body2: {
             fontSize: 12,
             lineHeight: 16,
             fontFamily: Font1.medium,
+            fontWeight: Medium
         },
         subtitle1: {
             fontSize: 14,
             lineHeight: 20,
-            fontFamily: Font1.semibold,
         },
         subtitle2: {
             fontSize: 12,
             lineHeight: 18,
             fontFamily: Font1.bold,
+            fontWeight: Bold
         },
         error: {
             fontSize: 14,
@@ -110,7 +119,8 @@ export const DefaultTypography: Pick<RNTheme, 'typography'> = {
             fontSize: 14,
             lineHeight: 14,
             fontFamily: Font1.bold,
-            textTransform: 'uppercase'
+            textTransform: 'uppercase',
+            fontWeight: Bold
         },
         caption: {
             fontSize: 12,

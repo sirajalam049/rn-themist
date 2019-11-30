@@ -19,7 +19,7 @@ export type TypographyVariants =
 export interface TypographyOptions extends Record<TypographyVariants, TextStyle> {
     fontFamily: TextStyle['fontFamily'];
     fontSize: TextStyle['fontSize'];
-    fontWeight?: TextStyle['fontWeight'];
+    fontWeight: TextStyle['fontWeight'];
     color: TextStyle['color'];
 }
 
