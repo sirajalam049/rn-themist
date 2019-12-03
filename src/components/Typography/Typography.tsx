@@ -146,4 +146,4 @@ const useStyle = makeStyles((theme) => {
     }))
 });
 
-export default Typography
+export default React.memo(Typography);

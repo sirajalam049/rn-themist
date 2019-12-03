@@ -18,7 +18,7 @@ export interface BoxProps extends ViewStyle {
     viewProps?: ViewProps
 }
 
-const Box: React.FC<BoxProps> = React.memo((props) => {
+const Box: React.FC<BoxProps> = (props) => {
     let { pb, bgColor, br, px, p, py, pl, pt, bw, m, mt, ml, mr, mb, my, mx, bc, style = {}, viewProps, ...viewStyle } = props;
     return (
         <View
@@ -53,10 +53,10 @@ const Box: React.FC<BoxProps> = React.memo((props) => {
             {props.children}
         </View>
     )
-})
+}
 
 const styles = StyleSheet.create({
 
 })
 
-export default Box
+export default React.memo(Box);

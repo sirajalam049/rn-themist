@@ -1,6 +1,6 @@
 {
     "name": "rn-themist",
-    "version": "0.0.31",
+    "version": "0.0.32",
     "description": "Material-UI way of theming RN Components",
     "main": "./dist/index.js",
     "_location": "/rn-themist",
