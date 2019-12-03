@@ -16,10 +16,14 @@ export interface BoxProps extends ViewStyle {
 
     style?: ViewStyle
     viewProps?: ViewProps
+
+    //https://github.com/DefinitelyTyped/DefinitelyTyped/pull/33602
+    children?: React.ReactNode
+
 }
 
 const Box: React.FC<BoxProps> = (props) => {
-    let { pb, bgColor, br, px, p, py, pl, pt, bw, m, mt, ml, mr, mb, my, mx, bc, style = {}, viewProps, ...viewStyle } = props;
+    let { pb, bgColor, br, px, p, py, pl, pt, bw, m, mt, ml, mr, mb, my, mx, bc, style = {}, viewProps, children, ...viewStyle } = props;
     return (
         <View
             style={{
@@ -50,7 +54,7 @@ const Box: React.FC<BoxProps> = (props) => {
             }}
             {...(viewProps || {})}
         >
-            {props.children}
+            {children}
         </View>
     )
 }

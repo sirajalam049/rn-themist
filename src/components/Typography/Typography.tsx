@@ -9,6 +9,9 @@ export interface TypographyProps extends TextProps {
     color?: TypographyColors;
     gutterButtom?: keyof GutterVariants;
     variant?: TypographyVariants;
+
+    //https://github.com/DefinitelyTyped/DefinitelyTyped/pull/33602
+    children?: React.ReactNode
 }
 
 
