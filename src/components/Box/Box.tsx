@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react'
+import * as React from 'react'
 import { StyleSheet, View, ViewStyle, ViewProps } from 'react-native';
 
 export interface BoxProps extends ViewStyle {
@@ -18,7 +18,7 @@ export interface BoxProps extends ViewStyle {
     viewProps?: ViewProps
 }
 
-const Box: FC<BoxProps> = memo((props) => {
+const Box: React.FC<BoxProps> = React.memo((props) => {
     let { pb, bgColor, br, px, p, py, pl, pt, bw, m, mt, ml, mr, mb, my, mx, bc, style = {}, viewProps, ...viewStyle } = props;
     return (
         <View
