@@ -1,4 +1,5 @@
 import RNTheme from './RNTheme';
+import { TextStyle } from 'react-native';
 
 const Font1 = {
     light: 'Quicksand-Light',
@@ -106,87 +107,82 @@ export const DefaultPallete: Pick<RNTheme, 'pallete'> = {
     },
 }
 
+
+const getTypography = (fontSize: number,
+    lineHeight?: number,
+    fontFamily?: string,
+    fontWeight?: TextStyle['fontWeight']): TextStyle => ({
+        fontSize,
+        lineHeight,
+        fontFamily,
+        fontWeight
+    })
+
+
 export const DefaultTypography: Pick<RNTheme, 'typography'> = {
     typography: {
         fontSize: 14,
         fontFamily: Font1.semibold,
         color: DefaultPallete.pallete.text.primary,
         fontWeight: "600",
-        h1: {
-            fontSize: 32,
-            lineHeight: 36
-        },
-        h2: {
-            fontSize: 28,
-            lineHeight: 32
-        },
-        h3: {
-            fontSize: 24,
-            lineHeight: 28
-        },
-        h4: {
-            fontSize: 20,
-            lineHeight: 24
-        },
-        h5: {
-            fontSize: 18,
-            lineHeight: 22
-        },
-        h6: {
-            fontSize: 16,
-            lineHeight: 20
-        },
-        body1: {
-            fontSize: 14,
-            lineHeight: 18,
-            fontFamily: Font1.regular,
-            fontWeight: Regular
-        },
-        body2: {
-            fontSize: 12,
-            lineHeight: 16,
-            fontFamily: Font1.medium,
-            fontWeight: Medium
-        },
-        subtitle1: {
-            fontSize: 14,
-            lineHeight: 20,
-        },
-        subtitle2: {
-            fontSize: 12,
-            lineHeight: 18,
-            fontFamily: Font1.bold,
-            fontWeight: Bold
-        },
+        h1: getTypography(32, 36),
+        h2: getTypography(28, 32),
+        h3: getTypography(24, 28),
+        h4: getTypography(20, 24),
+        h5: getTypography(18, 22),
+        h6: getTypography(16, 20),
+        body1: getTypography(14, 18, Font1.regular, Regular),
+        body2: getTypography(12, 16, Font1.medium, Medium),
+        subtitle1: getTypography(14, 20),
+        subtitle2: getTypography(12, 18, Font1.bold, Bold),
         error: {
-            fontSize: 14,
-            lineHeight: 18,
+            ...getTypography(14, 18),
             color: 'red'
         },
         button: {
-            fontSize: 14,
-            lineHeight: 14,
-            fontFamily: Font1.bold,
+            ...getTypography(14, 14, Font1.bold, Bold),
             textTransform: 'uppercase',
-            fontWeight: Bold
         },
         caption: {
-            fontSize: 12,
-            lineHeight: 16,
+            ...getTypography(12, 16),
             textTransform: 'uppercase'
         },
-        overline: {
-            fontSize: 10,
-            lineHeight: 14
-        },
+        overline: getTypography(10, 14),
+
     },
 }
+
+
+
+const getElevation = (elevation: number) => ({
+    elevation,
+    shadowOffset: { width: 0, height: elevation },
+    shadowColor: '#000',
+    shadowRadius: elevation * 2,
+});
+
+export const DefaultElevations: Pick<RNTheme, 'elevations'> = {
+    elevations: {
+        "0": getElevation(0),
+        "1": getElevation(1),
+        "2": getElevation(2),
+        "3": getElevation(3),
+        "4": getElevation(4),
+        "5": getElevation(5),
+        "6": getElevation(6),
+        "7": getElevation(7),
+        "8": getElevation(8),
+    }
+}
+
+
+
 
 export const DefaultTheme: RNTheme = {
 
     ...DefaultPallete,
-
     ...DefaultTypography,
+    ...DefaultElevations,
 
     gutters: {
         typography: {

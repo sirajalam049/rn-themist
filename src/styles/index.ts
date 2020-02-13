@@ -1,6 +1,4 @@
-export * from './createPallete';
-export * from './createTypography';
-export * from './createGutters';
+export * from './types';
 
 export * from './makeStyles';
 export { default as makeStyles } from './makeStyles';
