@@ -16,6 +16,7 @@ const Paper: React.FC<PaperProps> = (props) => {
     const theme = useTheme();
 
     const { elevation = 1, style: styles, ...boxProps } = props;
+
     return (
         <Box
             style={StyleSheet.flatten([
