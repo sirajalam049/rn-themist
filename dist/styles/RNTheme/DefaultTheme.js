@@ -1,27 +1,23 @@
-import RNTheme from './RNTheme';
-import { TextStyle } from 'react-native';
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const Font1 = {
     light: 'Quicksand-Light',
     regular: 'Quicksand-Regular',
     medium: 'Quicksand-Medium',
     semibold: 'Quicksand-SemiBold',
     bold: 'Quicksand-Bold',
-
     300: 'Quicksand-Light',
     400: 'Quicksand-Regular',
     500: 'Quicksand-Medium',
     600: 'Quicksand-SemiBold',
     700: 'Quicksand-Bold'
-}
-
+};
 const Light = "300";
 const Regular = "400";
 const Medium = "500";
 const SemoBold = "600";
 const Bold = "700";
-
-export const DefaultPallete: Pick<RNTheme, 'pallete'> = {
+exports.DefaultPallete = {
     pallete: {
         primary: {
             light: "#7986cb",
@@ -105,25 +101,18 @@ export const DefaultPallete: Pick<RNTheme, 'pallete'> = {
             900: "#212121",
         }
     },
-}
-
-
-const getTypography = (fontSize: number,
-    lineHeight?: number,
-    fontFamily?: string,
-    fontWeight?: TextStyle['fontWeight']): TextStyle => ({
-        fontSize,
-        lineHeight,
-        fontFamily,
-        fontWeight
-    })
-
-
-export const DefaultTypography: Pick<RNTheme, 'typography'> = {
+};
+const getTypography = (fontSize, lineHeight, fontFamily, fontWeight) => ({
+    fontSize,
+    lineHeight,
+    fontFamily,
+    fontWeight
+});
+exports.DefaultTypography = {
     typography: {
         fontSize: 14,
         fontFamily: Font1.semibold,
-        color: DefaultPallete.pallete.text.primary,
+        color: exports.DefaultPallete.pallete.text.primary,
         fontWeight: "600",
         h1: getTypography(32, 36),
         h2: getTypography(28, 32),
@@ -148,20 +137,15 @@ export const DefaultTypography: Pick<RNTheme, 'typography'> = {
             textTransform: 'uppercase'
         },
         overline: getTypography(10, 14),
-
     },
-}
-
-
-
-const getElevation = (elevation: number) => ({
+};
+const getElevation = (elevation) => ({
     elevation,
     shadowOffset: { width: 0, height: elevation },
     shadowColor: '#000',
     shadowRadius: elevation * 2,
 });
-
-export const DefaultElevations: Pick<RNTheme, 'elevations'> = {
+exports.DefaultElevations = {
     elevations: {
         "0": getElevation(0),
         "1": getElevation(1),
@@ -173,17 +157,11 @@ export const DefaultElevations: Pick<RNTheme, 'elevations'> = {
         "7": getElevation(7),
         "8": getElevation(8),
     }
-}
-
-
-
-
-export const DefaultTheme: RNTheme = {
-
-    ...DefaultPallete,
-    ...DefaultTypography,
-    ...DefaultElevations,
-
+};
+exports.DefaultTheme = {
+    ...exports.DefaultPallete,
+    ...exports.DefaultTypography,
+    ...exports.DefaultElevations,
     gutters: {
         typography: {
             low: 8,
@@ -191,6 +169,5 @@ export const DefaultTheme: RNTheme = {
             high: 24
         },
     }
-}
-
-export default DefaultTheme;
+};
+exports.default = exports.DefaultTheme;

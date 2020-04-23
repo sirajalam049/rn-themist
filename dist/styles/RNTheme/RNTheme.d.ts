@@ -1,10 +1,8 @@
 import { PalleteOptions, TypographyOptions, GutterOptions, ElevationOptions } from '../';
-
 export interface RNTheme {
     pallete: PalleteOptions;
     typography: TypographyOptions;
     gutters: GutterOptions;
-    elevations: ElevationOptions
-};
-
+    elevations: ElevationOptions;
+}
 export default RNTheme;
