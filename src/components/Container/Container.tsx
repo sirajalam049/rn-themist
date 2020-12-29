@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { SafeAreaView, StyleSheet, ViewProps } from 'react-native';
-import { makeStyles } from 'styles';
+import { makeStyles } from '../../styles';
 
 export interface ContainerProps extends ViewProps {
     flex?: boolean;

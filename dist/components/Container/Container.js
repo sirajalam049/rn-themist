@@ -9,7 +9,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(require("react"));
 const react_native_1 = require("react-native");
-const styles_1 = require("styles");
+const styles_1 = require("../../styles");
 const Container = (props) => {
     const { flex = true, bottomOnly = false, topOnly = false, ...viewProps } = props;
     const styles = useStyle();
