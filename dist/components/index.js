@@ -9,3 +9,6 @@ __export(require("./Typography"));
 var Box_1 = require("./Box");
 exports.Box = Box_1.default;
 __export(require("./Box"));
+var Container_1 = require("./Container");
+exports.Container = Container_1.default;
+__export(require("./Container"));
