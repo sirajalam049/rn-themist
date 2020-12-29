@@ -29,8 +29,12 @@ const Container: React.FC<ContainerProps> = (props) => {
     }
 
     if (bottomOnly) {
-        { props.children }
-        <SafeAreaView {...viewProps} />
+        return (
+            <>
+                { props.children}
+                < SafeAreaView {...viewProps} />
+            </>
+        )
     }
 
     return (

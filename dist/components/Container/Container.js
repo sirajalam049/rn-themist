@@ -20,10 +20,10 @@ const Container = (props) => {
             </>);
     }
     if (bottomOnly) {
-        {
-            props.children;
-        }
-        <react_native_1.SafeAreaView {...viewProps}/>;
+        return (<>
+                {props.children}
+                <react_native_1.SafeAreaView {...viewProps}/>
+            </>);
     }
     return (<react_native_1.SafeAreaView {...viewProps} style={react_native_1.StyleSheet.flatten([
         ...(flex ? [styles.flex] : []),
