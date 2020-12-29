@@ -17,11 +17,11 @@ const Font1 = {
 const Light = "300";
 const Regular = "400";
 const Medium = "500";
-const SemoBold = "600";
+const SemiBold = "600";
 const Bold = "700";
 
-export const DefaultPallete: Pick<RNTheme, 'pallete'> = {
-    pallete: {
+export const DefaultPalette: Pick<RNTheme, 'palette'> = {
+    palette: {
         primary: {
             light: "#7986cb",
             main: "#3f51b5",
@@ -110,7 +110,7 @@ export const DefaultTypography: Pick<RNTheme, 'typography'> = {
     typography: {
         fontSize: 14,
         fontFamily: Font1.semibold,
-        color: DefaultPallete.pallete.text.primary,
+        color: DefaultPalette.palette.text.primary,
         fontWeight: "600",
         h1: {
             fontSize: 32,
@@ -184,7 +184,7 @@ export const DefaultTypography: Pick<RNTheme, 'typography'> = {
 
 export const DefaultTheme: RNTheme = {
 
-    ...DefaultPallete,
+    ...DefaultPalette,
 
     ...DefaultTypography,
 

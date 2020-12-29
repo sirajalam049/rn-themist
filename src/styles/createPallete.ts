@@ -1,30 +1,30 @@
-export type PalleteShadeOptions = 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
+export type PaletteShadeOptions = 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
 
-export type ColorPallete = Record<PalleteShadeOptions, string>
+export type ColorPalette = Record<PaletteShadeOptions, string>
 
-export interface PalleteColorOptions {
+export interface PaletteColorOptions {
     main: string;
     light: string;
     dark: string;
     contrastText?: string;
 }
 
-export interface PalleteTextColor {
+export interface PaletteTextColor {
     primary: string;
     secondary: string;
 }
 
-export interface PalleteOptions {
-    primary: PalleteColorOptions;
-    secondary: PalleteColorOptions;
-    text: PalleteTextColor;
-    error: PalleteColorOptions;
-    success: PalleteColorOptions;
-    contrast: Pick<PalleteColorOptions, 'dark' | 'light' | 'main'>
+export interface PaletteOptions {
+    primary: PaletteColorOptions;
+    secondary: PaletteColorOptions;
+    text: PaletteTextColor;
+    error: PaletteColorOptions;
+    success: PaletteColorOptions;
+    contrast: Pick<PaletteColorOptions, 'dark' | 'light' | 'main'>
 
-    red: ColorPallete
-    green: ColorPallete
-    blue: ColorPallete
-    grey: ColorPallete
+    red: ColorPalette
+    green: ColorPalette
+    blue: ColorPalette
+    grey: ColorPalette
 
 }

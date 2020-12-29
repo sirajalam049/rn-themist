@@ -7,7 +7,7 @@ import { TypographyColors, TypographyVariants, GutterVariants } from '../../styl
 export interface TypographyProps extends TextProps {
     align?: 'left' | 'right' | 'center' | 'justify';
     color?: TypographyColors;
-    gutterButtom?: keyof GutterVariants;
+    gutterBottom?: keyof GutterVariants;
     variant?: TypographyVariants;
 
     //https://github.com/DefinitelyTyped/DefinitelyTyped/pull/33602
@@ -17,13 +17,13 @@ export interface TypographyProps extends TextProps {
 
 const Typography: React.FC<TypographyProps> = (props) => {
 
-    const { align = 'left', color = '', gutterButtom = '', variant = 'body2', children, style, ...textProps } = props;
+    const { align = 'left', color = '', gutterBottom: gutterBottom = '', variant = 'body2', children, style, ...textProps } = props;
 
     const styles = useStyle();
 
     const colorKey = (color && `color${utils.capitalize(color)}`) as keyof typeof styles;
     const alignKey = `align${utils.capitalize(align)}` as keyof typeof styles;
-    const gutterKey = (gutterButtom && `gutterBottom${utils.capitalize(gutterButtom)}`) as keyof typeof styles;
+    const gutterKey = (gutterBottom && `gutterBottom${utils.capitalize(gutterBottom)}`) as keyof typeof styles;
     const variantKey = `variant${utils.capitalize(variant)}` as keyof typeof styles;
 
     return (
@@ -33,7 +33,7 @@ const Typography: React.FC<TypographyProps> = (props) => {
                 styles[variantKey],
                 styles[colorKey],
                 styles[alignKey],
-                (gutterButtom ? styles[gutterKey] : {}),
+                (gutterBottom ? styles[gutterKey] : {}),
                 style
             ])}
             {...textProps}
@@ -45,7 +45,7 @@ const Typography: React.FC<TypographyProps> = (props) => {
 
 const useStyle = makeStyles((theme) => {
 
-    const color = theme.pallete;
+    const color = theme.palette;
     const gutter = theme.gutters.typography;
     const tg = theme.typography;
 
