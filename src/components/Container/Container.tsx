@@ -6,6 +6,9 @@ export interface ContainerProps extends ViewProps {
     flex?: boolean;
     topOnly?: boolean;
     bottomOnly?: boolean;
+
+    //https://github.com/DefinitelyTyped/DefinitelyTyped/pull/33602
+    children?: React.ReactNode
 }
 
 const Container: React.FC<ContainerProps> = (props) => {
