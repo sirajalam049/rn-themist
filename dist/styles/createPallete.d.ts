@@ -17,6 +17,7 @@ export interface PaletteOptions {
     error: PaletteColorOptions;
     success: PaletteColorOptions;
     contrast: Pick<PaletteColorOptions, 'dark' | 'light' | 'main'>;
+    background: PaletteColorOptions;
     red: ColorPalette;
     green: ColorPalette;
     blue: ColorPalette;

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.DefaultTheme = exports.DefaultTypography = exports.DefaultPalette = void 0;
 const Font1 = {
     light: 'Quicksand-Light',
     regular: 'Quicksand-Regular',
@@ -51,6 +52,11 @@ exports.DefaultPalette = {
             dark: '#fff',
             light: '#000',
             main: '#fff'
+        },
+        background: {
+            main: '#fff',
+            dark: '#000',
+            light: '#fff'
         },
         red: {
             50: "#fafafa",
@@ -186,6 +192,13 @@ exports.DefaultTheme = {
             medium: 16,
             high: 24
         },
+    },
+    overrides: {
+        button: {
+            sizeLarge: {
+                height: 100
+            }
+        }
     }
 };
 exports.default = exports.DefaultTheme;

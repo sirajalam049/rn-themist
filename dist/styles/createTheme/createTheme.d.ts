@@ -34,6 +34,12 @@ export declare const createTheme: <T extends {
             light?: string | undefined;
             main?: string | undefined;
         } | undefined;
+        background?: {
+            main?: string | undefined;
+            light?: string | undefined;
+            dark?: string | undefined;
+            contrastText?: string | undefined;
+        } | undefined;
         red?: {
             50?: string | undefined;
             100?: string | undefined;
@@ -2012,6 +2018,63 @@ export declare const createTheme: <T extends {
             low?: number | undefined;
             medium?: number | undefined;
             high?: number | undefined;
+        } | undefined;
+    } | undefined;
+    overrides?: {
+        button?: {
+            root?: {
+                justifyContent?: "center" | undefined;
+                alignItems?: "center" | undefined;
+            } | undefined;
+            fullWidth?: {
+                width?: string | undefined;
+            } | undefined;
+            variantContainedPrimary?: {
+                backgroundColor?: string | undefined;
+            } | undefined;
+            variantOutlinedPrimary?: {
+                borderWidth?: number | undefined;
+                borderColor?: string | undefined;
+            } | undefined;
+            variantOutlinedSecondary?: {
+                borderWidth?: number | undefined;
+                borderColor?: string | undefined;
+            } | undefined;
+            variantOutlined?: {
+                borderWidth?: number | undefined;
+                borderColor?: string | undefined;
+            } | undefined;
+            variantContainedSecondary?: {
+                backgroundColor?: string | undefined;
+            } | undefined;
+            variantTextPrimary?: {
+                backgroundColor?: string | undefined;
+                paddingHorizontal?: number | undefined;
+            } | undefined;
+            sizeSmall?: {} | undefined;
+            sizeMedium?: {
+                height?: number | undefined;
+                paddingHorizontal?: number | undefined;
+            } | undefined;
+            sizeLarge?: {
+                height?: number | undefined;
+            } | undefined;
+            sizeXLarge?: {
+                height?: number | undefined;
+            } | undefined;
+            roundedSmall?: {} | undefined;
+            roundedMedium?: {
+                borderRadius?: number | undefined;
+            } | undefined;
+            roundedLarge?: {
+                borderRadius?: number | undefined;
+            } | undefined;
+            disabledPrimary?: {
+                backgroundColor?: string | undefined;
+            } | undefined;
+            disabledSecondary?: {
+                backgroundColor?: string | undefined;
+            } | undefined;
         } | undefined;
     } | undefined;
 }>(theme: T) => RNTheme;

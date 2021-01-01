@@ -6,7 +6,7 @@ export interface ThemeProviderProps {
     theme: RNTheme
 }
 
-export const ThemeProvider: React.SFC<ThemeProviderProps> = (props) => {
+export const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
     return (
         <ThemeContext.Provider value={props.theme} >
             {props.children}

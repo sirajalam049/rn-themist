@@ -20,7 +20,9 @@ export interface PaletteOptions {
     text: PaletteTextColor;
     error: PaletteColorOptions;
     success: PaletteColorOptions;
-    contrast: Pick<PaletteColorOptions, 'dark' | 'light' | 'main'>
+    contrast: Pick<PaletteColorOptions, 'dark' | 'light' | 'main'>;
+
+    background: PaletteColorOptions;
 
     red: ColorPalette
     green: ColorPalette

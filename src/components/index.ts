@@ -7,3 +7,11 @@ export * from './Box';
 export { default as Container } from './Container';
 export * from './Container';
 
+export { default as Paper } from './Paper';
+export * from './Paper';
+
+export { default as Button } from './Button';
+export * from './Button';
+
+export { default as IconButton } from './IconButton';
+export * from './IconButton';

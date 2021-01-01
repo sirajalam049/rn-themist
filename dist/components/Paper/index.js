@@ -14,6 +14,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = void 0;
-var Box_1 = require("./Box");
-Object.defineProperty(exports, "default", { enumerable: true, get: function () { return __importDefault(Box_1).default; } });
-__exportStar(require("./Box"), exports);
+var Paper_1 = require("./Paper");
+Object.defineProperty(exports, "default", { enumerable: true, get: function () { return __importDefault(Paper_1).default; } });
+__exportStar(require("./Paper"), exports);

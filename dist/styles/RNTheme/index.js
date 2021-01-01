@@ -1,8 +1,20 @@
 "use strict";
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.DefaultTheme = void 0;
+__exportStar(require("./RNTheme"), exports);
 var DefaultTheme_1 = require("./DefaultTheme");
-exports.DefaultTheme = DefaultTheme_1.default;
-__export(require("./DefaultTheme"));
+Object.defineProperty(exports, "DefaultTheme", { enumerable: true, get: function () { return __importDefault(DefaultTheme_1).default; } });
+__exportStar(require("./DefaultTheme"), exports);

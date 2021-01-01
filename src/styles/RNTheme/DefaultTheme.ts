@@ -55,6 +55,11 @@ export const DefaultPalette: Pick<RNTheme, 'palette'> = {
             light: '#000',
             main: '#fff'
         },
+        background: {
+            main: '#fff',
+            dark: '#000',
+            light: '#fff'
+        },
         red: {
             50: "#fafafa",
             100: "#f5f5f5",
@@ -194,6 +199,14 @@ export const DefaultTheme: RNTheme = {
             medium: 16,
             high: 24
         },
+    },
+
+    overrides: {
+        button: {
+            sizeLarge: {
+                height: 100
+            }
+        }
     }
 }
 
