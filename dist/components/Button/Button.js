@@ -35,7 +35,7 @@ const Button = (props) => {
     const sizeKey = `size${utils_1.default.capitalize(size)}`;
     const roundedKey = `rounded${utils_1.default.capitalize(rounded)}`;
     const fullRoundedKey = rounded === 'full' ? `rounded${utils_1.default.capitalize(size)}` : null;
-    const disabledKey = `disabled${utils_1.default.capitalize(color)}`;
+    const disabledKey = `disabled${utils_1.default.capitalize(color)}${utils_1.default.capitalize(variant)}`;
     const underlayColor = disableRipple ? 'transparent' : (variant === 'contained' ? (color === 'primary' ? primary.dark : secondary.dark) : (color === 'primary' ? primary.light : secondary.light));
     const ButtonBase = variant === 'contained' ? react_native_1.TouchableHighlight : react_native_1.TouchableOpacity;
     return (<ButtonBase underlayColor={underlayColor} onPress={disabled ? undefined : onPress} delayPressIn={delayPressIn} style={react_native_1.StyleSheet.flatten([
@@ -105,11 +105,10 @@ exports.useButtonStyle = styles_1.makeStyles((theme) => {
         roundedLarge: {
             borderRadius: 20
         },
-        disabledPrimary: {
-            // backgroundColor: grey[400],
+        disabledPrimaryContained: {
             backgroundColor: primary['light'],
         },
-        disabledSecondary: {
+        disabledSecondaryContained: {
             backgroundColor: secondary['light']
         }
     }));

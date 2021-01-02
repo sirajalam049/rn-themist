@@ -33,7 +33,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     const sizeKey = `size${Utils.capitalize(size)}` as keyof typeof style;
     const roundedKey = `rounded${Utils.capitalize(rounded)}` as keyof typeof style;
     const fullRoundedKey = rounded === 'full' ? `rounded${Utils.capitalize(size)}` as keyof typeof style : null;
-    const disabledKey = `disabled${Utils.capitalize(color)}` as keyof typeof style;
+    const disabledKey = `disabled${Utils.capitalize(color)}${Utils.capitalize(variant)}` as keyof typeof style;
     const underlayColor = disableRipple ? 'transparent' : (variant === 'contained' ? (color === 'primary' ? primary.dark : secondary.dark) : (color === 'primary' ? primary.light : secondary.light))
     const ButtonBase = variant === 'contained' ? TouchableHighlight : TouchableOpacity;
     return (
@@ -119,11 +119,10 @@ export const useButtonStyle = makeStyles((theme) => {
             borderRadius: 20
         },
 
-        disabledPrimary: {
-            // backgroundColor: grey[400],
+        disabledPrimaryContained: {
             backgroundColor: primary['light'],
         },
-        disabledSecondary: {
+        disabledSecondaryContained: {
             backgroundColor: secondary['light']
         }
     }));

@@ -1,10 +1,14 @@
-import { ButtonProps } from "../../components/Button";
 import * as React from "react";
-import { ViewStyle } from "react-native";
-export interface CircularIconButtonProps extends ButtonProps {
+import { NativeSyntheticEvent, NativeTouchEvent, ViewStyle } from "react-native";
+export interface CircularIconButtonProps {
     size?: 'small' | 'medium' | 'large';
-    background?: 'dark' | 'light' | 'transparent' | 'white' | 'primary' | 'secondary';
+    onPress?: (event: NativeSyntheticEvent<NativeTouchEvent>) => void;
     elevation?: ViewStyle['elevation'];
+    color?: 'primary' | 'secondary' | 'default';
+    disabled?: boolean;
+    disableRipple?: boolean;
+    delayPressIn?: number;
+    style?: ViewStyle;
     children?: React.ReactNode;
 }
 declare const _default: React.NamedExoticComponent<CircularIconButtonProps>;

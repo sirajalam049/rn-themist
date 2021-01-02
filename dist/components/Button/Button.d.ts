@@ -63,10 +63,10 @@ export declare const useButtonStyle: import("../../styles").StylesHook<{
     roundedLarge: {
         borderRadius: number;
     };
-    disabledPrimary: {
+    disabledPrimaryContained: {
         backgroundColor: string;
     };
-    disabledSecondary: {
+    disabledSecondaryContained: {
         backgroundColor: string;
     };
 }>;

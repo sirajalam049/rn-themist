@@ -2069,10 +2069,10 @@ export declare const createTheme: <T extends {
             roundedLarge?: {
                 borderRadius?: number | undefined;
             } | undefined;
-            disabledPrimary?: {
+            disabledPrimaryContained?: {
                 backgroundColor?: string | undefined;
             } | undefined;
-            disabledSecondary?: {
+            disabledSecondaryContained?: {
                 backgroundColor?: string | undefined;
             } | undefined;
         } | undefined;

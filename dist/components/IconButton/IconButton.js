@@ -22,21 +22,32 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const Button_1 = __importDefault(require("../../components/Button"));
 const React = __importStar(require("react"));
 const react_native_1 = require("react-native");
 const styles_1 = require("../../styles");
 const utils_1 = __importDefault(require("../../utils"));
 const CircularIconButton = (props) => {
-    const { size = 'medium', color = '#fff', background = 'light', elevation = 0, ...buttonProps } = props;
+    const { size = 'medium', color = 'default', elevation = 0, disableRipple = false, delayPressIn = 200, style: styles = {}, disabled, onPress } = props;
     const style = useStyle();
+    const { palette: { primary, secondary }, overrides: { button } } = styles_1.useTheme();
     const sizeKey = `size${utils_1.default.capitalize(size)}`;
-    const backgroundKey = `background${utils_1.default.capitalize(background)}`;
+    const colorKey = `color${utils_1.default.capitalize(color)}`;
+    // const backgroundKey = `background${utils.capitalize(background)}` as keyof typeof style;
     const elevationKey = `elevation${elevation}`;
-    const iconSize = size === 'medium' ? 30 : (size === 'small' ? 24 : 45);
-    return (<Button_1.default style={react_native_1.StyleSheet.flatten([style.root, style[sizeKey], style[elevationKey], style[backgroundKey]])} {...buttonProps}>
-            {props.children}
-        </Button_1.default>);
+    const disabledKey = `disabled${utils_1.default.capitalize(color)}`;
+    const underlayColor = disableRipple ? 'transparent' : (color === 'primary' ? primary.light : secondary.light);
+    const ButtonBase = color === 'default' ? react_native_1.TouchableOpacity : react_native_1.TouchableHighlight;
+    return (<ButtonBase delayPressIn={delayPressIn} underlayColor={underlayColor} disabled={disabled} onPress={onPress} style={react_native_1.StyleSheet.flatten([
+        style.root,
+        style[sizeKey],
+        style[elevationKey],
+        // style[backgroundKey],
+        style[colorKey],
+        style[disabledKey],
+        { ...(styles || {}) },
+    ])}>
+            {props.children || null}
+        </ButtonBase>);
 };
 const useStyle = styles_1.makeStyles((theme) => {
     const { palette: { primary, secondary } } = theme;
@@ -63,17 +74,30 @@ const useStyle = styles_1.makeStyles((theme) => {
             borderRadius: 12
         },
         sizeMedium: {
-            height: 30,
-            width: 30,
-            borderRadius: 15
+            height: 32,
+            width: 32,
+            borderRadius: 16
         },
-        sizeLarge: {},
-        backgroundLight: { backgroundColor: 'rgba(0, 0, 0, 0.3)', },
-        backgroundDark: { backgroundColor: 'rgba(0, 0, 0, 0.7)', },
-        backgroundTransparent: { backgroundColor: 'transparent', },
-        backgroundWhite: { backgroundColor: 'rgba(255, 255, 255, 1)' },
-        backgroundPrimary: { backgroundColor: primary.main },
-        backgroundSecondary: { backgroundColor: secondary.main },
+        sizeLarge: {
+            height: 45,
+            width: 45,
+            borderRadius: 22.5
+        },
+        // backgroundLight: { backgroundColor: 'rgba(0, 0, 0, 0.3)', },
+        // backgroundDark: { backgroundColor: 'rgba(0, 0, 0, 0.7)', },
+        // backgroundTransparent: { backgroundColor: 'transparent', },
+        // backgroundWhite: { backgroundColor: 'rgba(255, 255, 255, 1)' },
+        // backgroundPrimary: { backgroundColor: primary.main },
+        // backgroundSecondary: { backgroundColor: secondary.main },
+        colorDefault: {
+            backgroundColor: 'transparent'
+        },
+        colorPrimary: {
+            backgroundColor: primary.main
+        },
+        colorSecondary: {
+            backgroundColor: secondary.main
+        },
         elevation0: {
             elevation: 0,
             shadowOpacity: 0,
@@ -94,6 +118,12 @@ const useStyle = styles_1.makeStyles((theme) => {
             shadowOffset: { width: 0, height: 3 },
             shadowColor: '#000',
             shadowRadius: 6,
+        },
+        disabledPrimary: {
+            backgroundColor: primary['light'],
+        },
+        disabledSecondary: {
+            backgroundColor: secondary['light']
         }
     }));
 });

@@ -32,7 +32,7 @@ const Container: React.FC<ContainerProps> = (props) => {
         return (
             <>
                 { props.children}
-                < SafeAreaView {...viewProps} />
+                <SafeAreaView {...viewProps} />
             </>
         )
     }
