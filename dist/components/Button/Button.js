@@ -84,7 +84,7 @@ exports.useButtonStyle = styles_1.makeStyles((theme) => {
             paddingHorizontal: 0
         },
         sizeSmall: {
-        // height: 
+            paddingHorizontal: 16
         },
         sizeMedium: {
             height: 34,

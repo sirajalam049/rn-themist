@@ -2051,7 +2051,9 @@ export declare const createTheme: <T extends {
                 backgroundColor?: string | undefined;
                 paddingHorizontal?: number | undefined;
             } | undefined;
-            sizeSmall?: {} | undefined;
+            sizeSmall?: {
+                paddingHorizontal?: number | undefined;
+            } | undefined;
             sizeMedium?: {
                 height?: number | undefined;
                 paddingHorizontal?: number | undefined;

@@ -96,7 +96,7 @@ export const useButtonStyle = makeStyles((theme) => {
         },
 
         sizeSmall: {
-            // height: 
+            paddingHorizontal: 16
         },
         sizeMedium: {
             height: 34,

@@ -45,7 +45,9 @@ export declare const useButtonStyle: import("../../styles").StylesHook<{
         backgroundColor: string;
         paddingHorizontal: number;
     };
-    sizeSmall: {};
+    sizeSmall: {
+        paddingHorizontal: number;
+    };
     sizeMedium: {
         height: number;
         paddingHorizontal: number;
