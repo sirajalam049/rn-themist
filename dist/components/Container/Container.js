@@ -23,29 +23,41 @@ const React = __importStar(require("react"));
 const react_native_1 = require("react-native");
 const styles_1 = require("../../styles");
 const Container = (props) => {
-    const { flex = true, bottomOnly = false, topOnly = false, ...viewProps } = props;
+    const { flex = true, bottomOnly = false, topOnly = false, style, ...viewProps } = props;
     const styles = useStyle();
     if (topOnly) {
         return (<>
-                <react_native_1.SafeAreaView {...viewProps}/>
+                <react_native_1.SafeAreaView {...viewProps} style={react_native_1.StyleSheet.flatten([
+            ...(flex ? [styles.flex] : []),
+            styles.background,
+            style
+        ])}/>
                 {props.children}
             </>);
     }
     if (bottomOnly) {
         return (<>
                 {props.children}
-                <react_native_1.SafeAreaView {...viewProps}/>
+                <react_native_1.SafeAreaView {...viewProps} style={react_native_1.StyleSheet.flatten([
+            ...(flex ? [styles.flex] : []),
+            styles.background,
+            style
+        ])}/>
             </>);
     }
     return (<react_native_1.SafeAreaView {...viewProps} style={react_native_1.StyleSheet.flatten([
         ...(flex ? [styles.flex] : []),
-        viewProps.style
+        styles.background,
+        style
     ])}>
             {props.children}
         </react_native_1.SafeAreaView>);
 };
 const useStyle = styles_1.makeStyles((theme) => {
     return (react_native_1.StyleSheet.create({
+        background: {
+            backgroundColor: theme.palette.background.main
+        },
         flex: {
             flex: 1
         }

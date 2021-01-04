@@ -13,7 +13,7 @@ export interface ContainerProps extends ViewProps {
 
 const Container: React.FC<ContainerProps> = (props) => {
 
-    const { flex = true, bottomOnly = false, topOnly = false, ...viewProps } = props;
+    const { flex = true, bottomOnly = false, topOnly = false, style, ...viewProps } = props;
 
 
 
@@ -22,7 +22,11 @@ const Container: React.FC<ContainerProps> = (props) => {
     if (topOnly) {
         return (
             <>
-                <SafeAreaView {...viewProps} />
+                <SafeAreaView {...viewProps} style={StyleSheet.flatten([
+                    ...(flex ? [styles.flex] : []),
+                    styles.background,
+                style
+            ])} />
                 {props.children}
             </>
         )
@@ -32,7 +36,11 @@ const Container: React.FC<ContainerProps> = (props) => {
         return (
             <>
                 { props.children}
-                <SafeAreaView {...viewProps} />
+                <SafeAreaView {...viewProps} style={StyleSheet.flatten([
+                    ...(flex ? [styles.flex] : []),
+                    styles.background,
+                style
+            ])} />
             </>
         )
     }
@@ -42,7 +50,8 @@ const Container: React.FC<ContainerProps> = (props) => {
             {...viewProps}
             style={StyleSheet.flatten([
                 ...(flex ? [styles.flex] : []),
-                viewProps.style
+                styles.background,
+                style
             ])}
         >
             {props.children}
@@ -52,6 +61,9 @@ const Container: React.FC<ContainerProps> = (props) => {
 
 const useStyle = makeStyles((theme) => {
     return (StyleSheet.create({
+        background: {
+            backgroundColor: theme.palette.background.main
+        },
         flex: {
             flex: 1
         }
