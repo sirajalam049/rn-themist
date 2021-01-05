@@ -7,13 +7,17 @@ export interface ContainerProps extends ViewProps {
     topOnly?: boolean;
     bottomOnly?: boolean;
 
+    topBackgroundColor?: string;
+    bottomBackgroundColor?: string;
+    backgroundColor?: string;
+
     //https://github.com/DefinitelyTyped/DefinitelyTyped/pull/33602
     children?: React.ReactNode
 }
 
 const Container: React.FC<ContainerProps> = (props) => {
 
-    const { flex = true, bottomOnly = false, topOnly = false, style, ...viewProps } = props;
+    const { flex = true, bottomOnly = false, topOnly = false, style, topBackgroundColor = '#fff', bottomBackgroundColor = '#fff', backgroundColor = '#fff', children, ...viewProps } = props;
 
 
 
@@ -23,11 +27,10 @@ const Container: React.FC<ContainerProps> = (props) => {
         return (
             <>
                 <SafeAreaView {...viewProps} style={StyleSheet.flatten([
-                    ...(flex ? [styles.flex] : []),
-                    styles.background,
+                    {backgroundColor: topBackgroundColor || backgroundColor},
                 style
             ])} />
-                {props.children}
+                {children}
             </>
         )
     }
@@ -35,14 +38,27 @@ const Container: React.FC<ContainerProps> = (props) => {
     if (bottomOnly) {
         return (
             <>
-                { props.children}
+                { children}
                 <SafeAreaView {...viewProps} style={StyleSheet.flatten([
-                    ...(flex ? [styles.flex] : []),
-                    styles.background,
+                    {backgroundColor: bottomBackgroundColor || backgroundColor},
                 style
             ])} />
             </>
         )
+    }
+
+    if (topBackgroundColor || bottomBackgroundColor) {
+        return <>
+            <SafeAreaView {...viewProps} style={StyleSheet.flatten([
+                {backgroundColor: topBackgroundColor || backgroundColor},
+                style
+            ])} />
+                {children}
+            <SafeAreaView {...viewProps} style={StyleSheet.flatten([
+                {backgroundColor: bottomBackgroundColor || backgroundColor},
+                style
+            ])} />
+        </>
     }
 
     return (
@@ -50,11 +66,11 @@ const Container: React.FC<ContainerProps> = (props) => {
             {...viewProps}
             style={StyleSheet.flatten([
                 ...(flex ? [styles.flex] : []),
-                styles.background,
+                {backgroundColor},
                 style
             ])}
         >
-            {props.children}
+            {children}
         </SafeAreaView>
     )
 }

@@ -23,34 +23,45 @@ const React = __importStar(require("react"));
 const react_native_1 = require("react-native");
 const styles_1 = require("../../styles");
 const Container = (props) => {
-    const { flex = true, bottomOnly = false, topOnly = false, style, ...viewProps } = props;
+    const { flex = true, bottomOnly = false, topOnly = false, style, topBackgroundColor = '#fff', bottomBackgroundColor = '#fff', backgroundColor = '#fff', children, ...viewProps } = props;
     const styles = useStyle();
     if (topOnly) {
         return (<>
                 <react_native_1.SafeAreaView {...viewProps} style={react_native_1.StyleSheet.flatten([
-            ...(flex ? [styles.flex] : []),
-            styles.background,
+            { backgroundColor: topBackgroundColor || backgroundColor },
             style
         ])}/>
-                {props.children}
+                {children}
             </>);
     }
     if (bottomOnly) {
         return (<>
-                {props.children}
+                {children}
                 <react_native_1.SafeAreaView {...viewProps} style={react_native_1.StyleSheet.flatten([
-            ...(flex ? [styles.flex] : []),
-            styles.background,
+            { backgroundColor: bottomBackgroundColor || backgroundColor },
             style
         ])}/>
             </>);
     }
+    if (topBackgroundColor || bottomBackgroundColor) {
+        return <>
+            <react_native_1.SafeAreaView {...viewProps} style={react_native_1.StyleSheet.flatten([
+            { backgroundColor: topBackgroundColor || backgroundColor },
+            style
+        ])}/>
+                {children}
+            <react_native_1.SafeAreaView {...viewProps} style={react_native_1.StyleSheet.flatten([
+            { backgroundColor: bottomBackgroundColor || backgroundColor },
+            style
+        ])}/>
+        </>;
+    }
     return (<react_native_1.SafeAreaView {...viewProps} style={react_native_1.StyleSheet.flatten([
         ...(flex ? [styles.flex] : []),
-        styles.background,
+        { backgroundColor },
         style
     ])}>
-            {props.children}
+            {children}
         </react_native_1.SafeAreaView>);
 };
 const useStyle = styles_1.makeStyles((theme) => {
