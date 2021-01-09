@@ -26,11 +26,15 @@ exports.ThemeProvider = void 0;
 const React = __importStar(require("react"));
 const ThemeContext_1 = __importDefault(require("../ThemeContext"));
 const ActionSheet_1 = __importDefault(require("../../components/ActionSheet"));
+const OverlayLoader_1 = __importDefault(require("../../components/OverlayLoader"));
 const ThemeProvider = (props) => {
     return (<ThemeContext_1.default.Provider value={props.theme}>
             {props.children}
-            <ActionSheet_1.default ref={(x) => {
-        ActionSheet_1.default.actionSheetInstance = x;
+            <ActionSheet_1.default ref={(r) => {
+        ActionSheet_1.default.actionSheetInstance = r;
+    }}/>
+            <OverlayLoader_1.default ref={(r) => {
+        OverlayLoader_1.default.overlayLoaderInstance = r;
     }}/>
         </ThemeContext_1.default.Provider>);
 };
