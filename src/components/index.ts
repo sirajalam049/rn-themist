@@ -21,3 +21,6 @@ export * from './ActionSheet';
 
 export { default as OverlayLoader } from './OverlayLoader';
 export * from './OverlayLoader';
+
+export { default as Toast } from './Toast';
+export * from './Toast';

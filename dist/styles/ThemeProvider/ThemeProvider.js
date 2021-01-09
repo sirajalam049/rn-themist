@@ -27,6 +27,7 @@ const React = __importStar(require("react"));
 const ThemeContext_1 = __importDefault(require("../ThemeContext"));
 const ActionSheet_1 = __importDefault(require("../../components/ActionSheet"));
 const OverlayLoader_1 = __importDefault(require("../../components/OverlayLoader"));
+const components_1 = require("components");
 const ThemeProvider = (props) => {
     return (<ThemeContext_1.default.Provider value={props.theme}>
             {props.children}
@@ -35,6 +36,10 @@ const ThemeProvider = (props) => {
     }}/>
             <OverlayLoader_1.default ref={(r) => {
         OverlayLoader_1.default.overlayLoaderInstance = r;
+    }}/>
+            
+            <components_1.Toast ref={(r) => {
+        components_1.Toast.toastInstance = r;
     }}/>
         </ThemeContext_1.default.Provider>);
 };
