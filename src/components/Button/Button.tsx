@@ -1,5 +1,5 @@
 import * as React from "react";
-import { NativeSyntheticEvent, NativeTouchEvent, StyleSheet, TouchableHighlight, StyleProp, ViewStyle, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
+import { NativeSyntheticEvent, NativeTouchEvent, StyleSheet, TouchableHighlight, StyleProp, ViewStyle, TouchableOpacity, TouchableWithoutFeedback, GestureResponderEvent } from 'react-native';
 import { PaperProps } from "../Paper";
 import Utils from "../../utils";
 import { useTheme, makeStyles } from "../../styles";
@@ -16,6 +16,7 @@ export interface ButtonProps {
     fullWidth?: boolean;
     disableRipple?: boolean;
     delayPressIn?: number;
+    onLongPress?: (event: GestureResponderEvent) => void;
 
     //https://github.com/DefinitelyTyped/DefinitelyTyped/pull/33602
     children?: React.ReactNode
@@ -26,7 +27,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     const style = useButtonStyle();
     const { palette: { primary, secondary }, overrides: {button} } = useTheme();
     const { children, disabled = false, onPress = () => { }, variant = 'text', color = 'primary', size = 'medium', rounded = 'none',
-        style: styles = {}, fullWidth = false, disableRipple = false, delayPressIn = 200
+        style: styles = {}, fullWidth = false, disableRipple = false, delayPressIn = 200, onLongPress
     } = props;
 
     const variantKey = `variant${Utils.capitalize(variant)}${Utils.capitalize(color)}` as keyof typeof style;
@@ -40,6 +41,7 @@ const Button: React.FC<ButtonProps> = (props) => {
         <ButtonBase
             underlayColor={underlayColor}
             onPress={disabled ? undefined : onPress}
+            onLongPress={disabled ? undefined : onLongPress}
             delayPressIn={delayPressIn}
             style={StyleSheet.flatten([
                 style.root,

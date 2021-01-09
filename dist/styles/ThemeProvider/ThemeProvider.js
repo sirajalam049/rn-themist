@@ -25,9 +25,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ThemeProvider = void 0;
 const React = __importStar(require("react"));
 const ThemeContext_1 = __importDefault(require("../ThemeContext"));
+const ActionSheet_1 = __importDefault(require("../../components/ActionSheet"));
 const ThemeProvider = (props) => {
     return (<ThemeContext_1.default.Provider value={props.theme}>
             {props.children}
+            <ActionSheet_1.default ref={(x) => {
+        ActionSheet_1.default.actionSheetInstance = x;
+    }}/>
         </ThemeContext_1.default.Provider>);
 };
 exports.ThemeProvider = ThemeProvider;

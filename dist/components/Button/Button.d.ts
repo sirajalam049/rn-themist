@@ -1,5 +1,5 @@
 import * as React from "react";
-import { NativeSyntheticEvent, NativeTouchEvent, StyleProp, ViewStyle } from 'react-native';
+import { NativeSyntheticEvent, NativeTouchEvent, StyleProp, ViewStyle, GestureResponderEvent } from 'react-native';
 import { PaperProps } from "../Paper";
 export interface ButtonProps {
     variant?: 'text' | 'contained' | 'outlined';
@@ -13,6 +13,7 @@ export interface ButtonProps {
     fullWidth?: boolean;
     disableRipple?: boolean;
     delayPressIn?: number;
+    onLongPress?: (event: GestureResponderEvent) => void;
     children?: React.ReactNode;
 }
 export declare const useButtonStyle: import("../../styles").StylesHook<{

@@ -30,7 +30,7 @@ const styles_1 = require("../../styles");
 const Button = (props) => {
     const style = exports.useButtonStyle();
     const { palette: { primary, secondary }, overrides: { button } } = styles_1.useTheme();
-    const { children, disabled = false, onPress = () => { }, variant = 'text', color = 'primary', size = 'medium', rounded = 'none', style: styles = {}, fullWidth = false, disableRipple = false, delayPressIn = 200 } = props;
+    const { children, disabled = false, onPress = () => { }, variant = 'text', color = 'primary', size = 'medium', rounded = 'none', style: styles = {}, fullWidth = false, disableRipple = false, delayPressIn = 200, onLongPress } = props;
     const variantKey = `variant${utils_1.default.capitalize(variant)}${utils_1.default.capitalize(color)}`;
     const sizeKey = `size${utils_1.default.capitalize(size)}`;
     const roundedKey = `rounded${utils_1.default.capitalize(rounded)}`;
@@ -38,7 +38,7 @@ const Button = (props) => {
     const disabledKey = `disabled${utils_1.default.capitalize(color)}${utils_1.default.capitalize(variant)}`;
     const underlayColor = disableRipple ? 'transparent' : (variant === 'contained' ? (color === 'primary' ? primary.dark : secondary.dark) : (color === 'primary' ? primary.light : secondary.light));
     const ButtonBase = variant === 'contained' ? react_native_1.TouchableHighlight : react_native_1.TouchableOpacity;
-    return (<ButtonBase underlayColor={underlayColor} onPress={disabled ? undefined : onPress} delayPressIn={delayPressIn} style={react_native_1.StyleSheet.flatten([
+    return (<ButtonBase underlayColor={underlayColor} onPress={disabled ? undefined : onPress} onLongPress={disabled ? undefined : onLongPress} delayPressIn={delayPressIn} style={react_native_1.StyleSheet.flatten([
         style.root,
         { ...style[sizeKey], ...button[sizeKey] },
         style[variantKey],

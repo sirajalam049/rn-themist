@@ -15,3 +15,6 @@ export * from './Button';
 
 export { default as IconButton } from './IconButton';
 export * from './IconButton';
+
+export { default as ActionSheet } from './ActionSheet';
+export * from './ActionSheet';
