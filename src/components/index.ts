@@ -18,3 +18,6 @@ export * from './IconButton';
 
 export { default as ActionSheet } from './ActionSheet';
 export * from './ActionSheet';
+
+export { default as OverlayLoader } from './OverlayLoader';
+export * from './OverlayLoader';
