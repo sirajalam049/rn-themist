@@ -3,7 +3,7 @@ import ThemeContext from '../ThemeContext';
 import { RNTheme } from '../RNTheme';
 import ActionSheet from '../../components/ActionSheet';
 import OverlayLoader from '../../components/OverlayLoader';
-import { Toast } from 'components';
+import Toast from '../../components/Toast';
 
 export interface ThemeProviderProps {
     theme: RNTheme
