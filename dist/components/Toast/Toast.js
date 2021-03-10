@@ -108,6 +108,8 @@ class Toast extends React.Component {
 Toast.withToast = async (cb, config) => {
     try {
         const res = await cb();
+        if (config?.showSuccessMessage === false)
+            return res;
         const msg = config?.successToastMessage || 'Success';
         Toast.toastInstance.showSuccessToast({ ...config, successToastMessage: msg });
         return res;
